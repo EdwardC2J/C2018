@@ -1,0 +1,91 @@
+作业要求：学习指导书的实验一。
+
+实验一
+
+（一）实验要求
+
+一、程序均需在编译器中进行试验
+二、实验完成后只需要上交第2、3、4、5、6题的源程序文件
+三、源程序文件名均使用“1_题号.c”作为文件名，如1_2.c
+四、作业上交要求：
+1. 只需要交.c源文件
+2. 将所有源文件压缩，压缩包文件名为“学号姓名第n次实验”
+
+（二）实验内容
+
+一、 编译器的掌握
+Visual Studio 2010++
+DEV C++
+
+二、程序输入和简单程序设计
+
+1．下面有两个小程序，将它们输入（注释不输入）或导入编译器，观察运行结果。
+【程序源代码1】
+#include <stdio.h>
+int main(void)
+{
+	printf("\n"); /* ‘\n’表示换行符 */
+	printf("* * *\n");
+	printf("*   *\n");
+	printf("*   *\n");
+	printf("*   *\n");
+	printf("* * *\n");
+	return 0;
+}
+【程序源代码2】
+#include <stdio.h>
+int main(void)
+{
+	int row,col,result;
+    printf("\n");
+	for (row=1;row<10;row++){   
+		for(col=1;col<10;col++){	
+			result=row*col;
+			printf("%d*%d=%-5d",row,col,result); /*-5d表示左对齐输出，输出占5列*/
+		}
+	printf("\n");
+	}
+	return 0;
+}
+2．编写程序。程序的功能是输出一个字符串“I am happy!”。
+3．利用星号和空格输出一个爱心形状。
+4．键盘输入x的值，求方程y=x*x+2*x-10所对应的y值。用于输入变量的scanf函数的具体调用格式可参考教材。
+5．从键盘输入两个整数，求这两个整数的和和差并输出。
+PS：常用scanf函数输入变量的值，如可用scanf(“%d”,&x) 输入变量x的值，变量名前的取地址符号“&”不能省略。调用scanf函数也必须在调用前加上#include <stdio.h>或#include “stdio.h”行。
+6. 编写程序，输入一个长方体的长、宽和高（整数），输出这个长方体的体积。
+
+三、程序调试技术
+
+1. 以下程序求两个输入的整数的和，请找出其中的错误。
+
+#include<stdio.h>
+
+int main()
+{
+	int a,b,sum;
+
+	sum=a+b;
+	a=1;
+	b=2;
+
+	printf("sum=%d\n",sum);
+}
+
+2. 以下程序求1到100的和，请找出其中的错误。
+
+#include<stdio.h>
+
+int main()
+{
+	int a,i,sum;
+
+	i=0;
+	while(i<=100)
+	{
+		sum=sum+i;
+		i=i+1;
+	}
+
+	printf("1+2+...+100=%d\n",sum);
+	
+}
