@@ -1,0 +1,31 @@
+第三次实验第六题
+很多同学反映出现了这种情况：
+	printf("w:");
+	scanf("%lf",&w);
+	printf("h:");
+	scanf("%lf",&h);
+	printf("y:");
+	scanf("%lf",&y);
+	printf("sex:");
+	scanf("%c",&sex);
+很多人代码是这样的，然后发现最后的M F无法输入，这是由于当你输入y的值以后按下的回车键，把一个换行代码‘\r’自动传递给了sex变量。
+‘\r’的ASCII码为10，同学们如果想验证可以在这段代码后面加上
+  printf("sex=%d",sex); 
+就可以看到sex的ASCII码值了。
+
+如果想解决这个问题，我这暂时有两种方法：
+
+方法1：
+	printf("sex:");
+	scanf("%c",&sex);
+	printf("w:");
+	scanf("%lf",&w);
+	printf("h:");
+	scanf("%lf",&h);
+	printf("y:");
+	scanf("%lf",&y);
+将sex的输入放在第一个，可以有效解决该问题
+
+方法2：（感谢给我提出方法的171830021的同学）
+  scanf("%lf%lf%lf %c",&w,&h,&y,&sex);
+用这种统一输入方法也可以解决该问题
