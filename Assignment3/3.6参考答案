@@ -1,0 +1,35 @@
+
+	double height,weight,BMR;
+	int age;
+	char s;
+	double k;
+	printf("请输入您的身高(cm),体重(kg),年龄,性别（M/F）:");
+	scanf("%lf,%lf,%d,%c",&height,&weight,&age,&s);
+	if(s=='F')
+		BMR=655+(4.3*weight*2.2)+(4.7*height*0.39)-(4.7*age);
+	else
+		BMR=66+(6.3*weight*2.2)+(12.9*height*0.39)-(6.8*age);
+	k=BMR/230;
+	printf("为了保持身材，您需要消耗%.2lf块巧克力。",k);
+
+或者
+
+	int h,w,age;
+	char  sex;
+	double BMR;
+	printf("身高(cm)：");
+	scanf("%d",&h);
+	printf("体重(kg)：");
+	scanf("%d",&w);
+	printf("年龄：");
+	scanf("%d",&age);
+	printf("性别(用M表示男性，用F表示女性)：");
+	scanf(" %c",&sex);		//注意：这里输入char类型时前面加一个空格，以匹配前面输入内容后的空白字符
+	if(sex=='M')		//C语言中的比较运算符是==
+		BMR=66+(6.3*w*2.2) + (12.9*h*0.39) - (6.8*age);
+	else
+		BMR=655+(4.3*w*2.2) + (4.7*h*0.39) - (4.7*age);
+	printf("维持相应的体重所需要消耗的巧克力%d块",(int)BMR/230);
+/*如果最后以整数输出，不能直接%d对应BMR/230的double类型，需要强制转换一致后再匹配*/
+/*此外，使用if等语句时，如果需要执行多个语句，一定要用｛｝，只有执行的是单个语句时，才能不加｛｝*/
+
